@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registration Form</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(to right,#cfd6dd,#9aa5b1);
+}
+
+.wrapper{
+    width:520px;
+}
+
+/* FORM CARD */
+.form-container{
+    background:#f4f6f8;
+    padding:35px;
+    border-radius:15px;
+    box-shadow:0 20px 45px rgba(0,0,0,0.25);
+    margin-bottom:35px;
+}
+
+h2{
+    text-align:center;
+    margin-bottom:25px;
+    font-weight:600;
+    color:#2d3748;
+}
+
+label{
+    font-size:14px;
+    font-weight:500;
+    color:#374151;
+}
+
+input, select{
+    width:100%;
+    padding:10px;
+    margin:8px 0 18px;
+    border-radius:8px;
+    border:1px solid #cbd5e1;
+    font-size:14px;
+    background:#ffffff;
+}
+
+input:focus, select:focus{
+    outline:none;
+    border-color:#6b7280;
+    box-shadow:0 0 5px rgba(0,0,0,0.2);
+}
+
+/* Submit Button */
+button{
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:25px;
+    background:linear-gradient(to right,#374151,#6b7280);
+    color:#fff;
+    font-size:15px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    background:linear-gradient(to right,#2f3744,#5a6472);
+}
+
+/* TABLE */
+.table-container{
+    background:#eef2f6;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 15px 35px rgba(0,0,0,0.2);
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+thead{
+    background:linear-gradient(to right,#2d3748,#4b5563);
+    color:#fff;
+}
+
+th, td{
+    padding:10px;
+    text-align:center;
+    font-size:13px;
+}
+
+tbody tr{
+    border-bottom:1px solid #d1d5db;
+}
+
+.copy-btn{
+    margin-top:18px;
+    width:220px;
+    border-radius:25px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="wrapper">
+
+<div class="form-container">
+<h2>Registration Form</h2>
+
+<form id="form">
+<label>Full Name *</label>
+<input type="text" id="name" required>
+
+<label>Age *</label>
+<input type="range" id="age" min="18" max="60" value="18" oninput="ageValue.innerText=this.value">
+<p style="margin-bottom:15px;">Age: <span id="ageValue">18</span></p>
+
+<label>Email *</label>
+<input type="email" id="email" required>
+
+<label>Password *</label>
+<input type="password" id="password" required>
+
+<label>Telephone *</label>
+<input type="tel" id="phone" required>
+
+<label>Date of Birth</label>
+<input type="date" id="dob">
+
+<label>Gender *</label>
+<select id="gender" required>
+<option value="">Select</option>
+<option>Male</option>
+<option>Female</option>
+</select>
+
+<button type="submit">Submit</button>
+</form>
+</div>
+
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Age</th>
+<th>Email</th>
+<th>Password</th>
+<th>Phone</th>
+<th>DOB</th>
+<th>Gender</th>
+</tr>
+</thead>
+<tbody id="data"></tbody>
+</table>
+
+<button class="copy-btn" onclick="copyTable()">Copy Table Data</button>
+</div>
+
+</div>
+
+<script>
+const form=document.getElementById("form");
+const data=document.getElementById("data");
+
+form.addEventListener("submit",function(e){
+    e.preventDefault();
+
+    const row=`
+    <tr>
+    <td>${name.value}</td>
+    <td>${age.value}</td>
+    <td>${email.value}</td>
+    <td>${password.value}</td>
+    <td>${phone.value}</td>
+    <td>${dob.value}</td>
+    <td>${gender.value}</td>
+    </tr>`;
+
+    data.innerHTML+=row;
+    form.reset();
+    ageValue.innerText=18;
+});
+
+function copyTable(){
+    let text="";
+    document.querySelectorAll("tbody tr").forEach(row=>{
+        row.querySelectorAll("td").forEach(cell=>{
+            text+=cell.innerText+" | ";
+        });
+        text+="\n";
+    });
+    navigator.clipboard.writeText(text);
+    alert("Table Data Copied!");
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,139 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #e6f0ff, #ffffff);
+    color: #2c3e50;
+}
+
+/* Navbar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+}
+
+nav .logo {
+    font-size: 22px;
+    font-weight: bold;
+    color: #4facfe;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #2c3e50;
+    font-size: 14px;
+}
+
+nav ul li .btn {
+    background: #4facfe;
+    color: white;
+    padding: 6px 15px;
+    border-radius: 20px;
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 80px 60px;
+}
+
+.hero .left {
+    max-width: 500px;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 16px;
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+/* Buttons */
+.primary {
+    background: #4facfe;
+    color: white;
+    padding: 10px 22px;
+    border-radius: 25px;
+    text-decoration: none;
+    margin-right: 10px;
+    display: inline-block;
+}
+
+.secondary {
+    background: #4facfe;
+    color: white;
+    padding: 10px 22px;
+    border-radius: 25px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+/* Image Section */
+.hero .right img {
+    max-width: 320px;
+}
+
+/* Forms (Login/Register) */
+form {
+    background: white;
+    padding: 30px;
+    width: 300px;
+    margin: 80px auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+input, textarea {
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background: #4facfe;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Dashboard */
+h2 {
+    text-align: center;
+    margin-top: 30px;
+}
+
+a {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 15px;
+    background: #4facfe;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}

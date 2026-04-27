@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Modern Contact Form</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+.container {
+    width: 380px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    color: white;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 18px;
+}
+
+.input-group input,
+.input-group textarea,
+.input-group select {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.2);
+    color: white;
+    font-size: 14px;
+}
+
+.input-group input::placeholder,
+.input-group textarea::placeholder {
+    color: #ddd;
+}
+
+select {
+    color: white;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.submit-btn {
+    background: linear-gradient(135deg, #ff7eb3, #ff758c);
+    color: white;
+    margin-top: 10px;
+}
+
+.submit-btn:hover {
+    transform: scale(1.05);
+}
+
+.copy-btn {
+    margin-top: 10px;
+    background: linear-gradient(135deg, #43e97b, #38f9d7);
+    color: black;
+}
+
+.copy-btn:hover {
+    transform: scale(1.05);
+}
+
+.output {
+    margin-top: 15px;
+    padding: 12px;
+    border-radius: 10px;
+    background: rgba(0,0,0,0.3);
+    font-size: 14px;
+    white-space: pre-line;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h2>✨ Contact Me</h2>
+
+    <form id="form">
+        <div class="input-group">
+            <input type="text" id="name" placeholder="Your Name" required>
+        </div>
+
+        <div class="input-group">
+            <input type="email" id="email" placeholder="Your Email" required>
+        </div>
+
+        <div class="input-group">
+            <select id="gender">
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+        </div>
+
+        <div class="input-group">
+            <textarea id="message" rows="3" placeholder="Your Message"></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn">Submit 🚀</button>
+    </form>
+
+    <div id="output" class="output"></div>
+
+    <button id="copyBtn" class="copy-btn">Copy Data 📋</button>
+</div>
+
+<script>
+const form = document.getElementById("form");
+const output = document.getElementById("output");
+const copyBtn = document.getElementById("copyBtn");
+
+form.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const gender = document.getElementById("gender").value;
+    const message = document.getElementById("message").value;
+
+    output.textContent =
+        "👤 Name: " + name + "\n" +
+        "📧 Email: " + email + "\n" +
+        "⚧ Gender: " + gender + "\n" +
+        "💬 Message: " + message;
+});
+
+copyBtn.addEventListener("click", async function() {
+    try {
+        await navigator.clipboard.writeText(output.textContent);
+        copyBtn.textContent = "Copied ✅";
+        setTimeout(() => {
+            copyBtn.textContent = "Copy Data 📋";
+        }, 2000);
+    } catch (err) {
+        alert("Copy failed!");
+    }
+});
+</script>
+
+</body>
+</html>

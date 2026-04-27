@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background: #f4f7fb;
+    color: #333;
+}
+
+/* 🔹 Container */
+.container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+/* 🔹 Title */
+h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 25px;
+}
+
+/* 🔹 Card */
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* 🔹 Section title */
+h2 {
+    color: #2563eb;
+    margin-bottom: 15px;
+}
+
+/* 🔹 Buttons */
+.buttons {
+    margin-bottom: 15px;
+}
+
+button {
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    margin: 6px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-weight: 500;
+}
+
+button:hover {
+    background: #1e40af;
+    transform: translateY(-2px);
+}
+
+/* 🔹 Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+/* Header */
+th {
+    background: #2563eb;
+    color: white;
+    padding: 12px;
+}
+
+/* Rows */
+td {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+/* Alternate row color */
+tr:nth-child(even) {
+    background: #f1f5ff;
+}
+
+/* Hover effect */
+tr:hover {
+    background: #dbeafe;
+}
+
+/* 🔹 Result text */
+#studentResult {
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #1e3a8a;
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Student Dashboard</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>🚀 Student Dashboard</h1>
+
+    <div class="card">
+        <h2>🎓 Student Operations</h2>
+
+        <div class="buttons">
+            <button onclick="printNames()">📋 All Students</button>
+            <button onclick="marksAbove80()">🔥 Marks > 80</button>
+            <button onclick="countCourses()">📊 Count Courses</button>
+            <button onclick="showCSE()">💻 CSE Only</button>
+            <button onclick="convertUpper()">🔠 Uppercase</button>
+            <button onclick="topStudent()">🏆 Top Student</button>
+            <button onclick="totalStudents()">👨‍🎓 Total Students</button>
+        </div>
+
+        <p id="studentResult"></p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Marks</th>
+                    <th>Course</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody"></tbody>
+        </table>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
