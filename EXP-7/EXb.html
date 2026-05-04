@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>IronCore Fitness - Basic</title>
+
+    <script>
+        function addToCart(product) {
+            alert(product + " added to cart!");
+        }
+
+        function showOffers() {
+            alert("20% OFF on Gym Equipment\nFree Delivery above ₹1000");
+        }
+
+        function submitForm() {
+            let name = document.getElementById("name").value;
+            alert("Thank you " + name + "! Form submitted.");
+            return false;
+        }
+    </script>
+</head>
+
+<body>
+
+<h1>IronCore Fitness Store</h1>
+<p>Your Gym Equipment Shop</p>
+<hr>
+
+<h2>Products</h2>
+
+<h3>Dumbbells</h3>
+<p>Price: ₹4,999</p>
+<button onclick="addToCart('Dumbbells')">Add to Cart</button>
+
+<hr>
+
+<h3>Whey Protein</h3>
+<p>Price: ₹2,499</p>
+<button onclick="addToCart('Whey Protein')">Add to Cart</button>
+
+<hr>
+
+<h2>Offers</h2>
+<button onclick="showOffers()">View Offers</button>
+
+<hr>
+
+<h2>Contact Us</h2>
+
+<form onsubmit="return submitForm()">
+    <input type="text" id="name" placeholder="Name" required><br><br>
+    <input type="email" placeholder="Email" required><br><br>
+
+    <input type="submit" value="Submit">
+</form>
+
+</body>
+</html>
